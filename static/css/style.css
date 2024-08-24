@@ -1,0 +1,139 @@
+.map-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+text {
+    pointer-events: none;
+}
+
+#map {
+    padding: 2rem;
+    height: 80vh;
+    border: 1px solid black;
+}
+
+a:hover path {
+    stroke: yellow;
+    stroke-width: 2;
+}
+
+.safe_democrat {
+    fill: #244999;
+}
+
+.likely_democrat {
+    fill: #577ccc;
+}
+
+.leans_democrat {
+    fill: #8aafff;
+}
+
+.tilt_democrat {
+    fill: #949bb3;
+}
+
+.safe_republican {
+    fill: #d22532;
+}
+
+.likely_republican {
+    fill: #ff5865;
+}
+
+.leans_republican {
+    fill: #ff8b98;
+}
+
+.tilt_republican {
+    fill: #cf8980;
+}
+
+.tossup {
+    fill: gray
+}
+
+/*  */
+
+.popup-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.electoral-votes {
+    display: flex;
+    flex-direction: row;
+}
+
+.trump {
+    height: 40px;
+    display: flex;
+    gap: 1rem;
+    background-color: #FFD6D9;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trump p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+
+.harris {
+  height: 40px;
+  display: flex;
+  gap: 1rem;
+  background-color: #B9DCF8;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.harris p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/*  */
+
+.electoral-bar {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: lightgray;
+    margin-bottom: 20px;
+}
+
+.candidate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.trump-electoral {
+    background-color: #d22532;
+    height: 100%;
+}
+
+.harris-electoral {
+    background-color: #244999;
+    height: 100%;
+}
