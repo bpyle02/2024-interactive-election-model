@@ -1,6 +1,8 @@
 let totalElectoralVotes = 538
-let trumpElectoralVotes = 10
+let trumpElectoralVotes = 0
 let harrisElectoralVotes = 0
+let trumpTotalVotes = 0
+let harrisTotalVotes = 0
 
 // Function to color the states and add hover effect
 function colorStates(data) {
@@ -9,6 +11,7 @@ function colorStates(data) {
     const popup = document.createElement('div');
     popup.id = 'state-popup';
     popup.style.position = 'absolute';
+    popup.style.width = '18rem';
     popup.style.padding = '10px';
     popup.style.backgroundColor = 'white';
     popup.style.boxShadow = '5px 5px 5px rgb(0 0 0 / 20%)'
@@ -24,6 +27,8 @@ function colorStates(data) {
         const stateLink = document.getElementById(info.state_abbreviation + "_Link");
 
         margin = info.r_percent - info.d_percent;
+        harrisTotalVotes += info.expected_turnout * info.d_percent
+        trumpTotalVotes += info.expected_turnout * info.r_percent
 
         // Apply color based on winner
         if (margin < 0) {
@@ -59,15 +64,18 @@ function colorStates(data) {
             document.getElementById('trumpBar').style.width = trumpPercentage + '%';
             document.getElementById('harrisBar').style.width = harrisPercentage + '%';
     
-            document.getElementById('trumpVotes').textContent = trumpElectoralVotes + " ";
-            document.getElementById('harrisVotes').textContent = harrisElectoralVotes + " ";
+            document.getElementById('trumpElectoralVotes').textContent = trumpElectoralVotes + " ";
+            document.getElementById('harrisElectoralVotes').textContent = harrisElectoralVotes + " ";
+
+            document.getElementById("trumpTotalVotes").textContent = Math.round(trumpTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " Votes";
+            document.getElementById("harrisTotalVotes").textContent = Math.round(harrisTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " Votes";
 
             // Add hover event to show popup
             stateLink.addEventListener('mouseenter', (event) => {
                 const popupHTML = `
                     <div class='popup-wrapper'>
                         <div class='popup-header'>
-                            <p>${info.electoral_votes} Electoral Votes</p>
+                            <h2>${state} - ${info.electoral_votes} EV</h2>
                         </div>
                         <div class='trump' style='width:${info.r_percent * 100}%;'>
                             <p>${(info.r_percent * 100).toFixed(2)}%</p>

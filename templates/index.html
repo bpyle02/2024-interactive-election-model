@@ -4,17 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Election Map</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/destyle.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </head>
 
 <body>
+    <div class="candidate-wrapper">
+        <div class="trump-vote-totals">
+            <h1>Trump</h1>
+            <h3 id="trumpTotalVotes">0</h3>
+        </div>
+        
+        <div class="harris-vote-totals">
+            <h1>Harris</h1>
+            <h3 id="harrisTotalVotes">0</h3>
+        </div>
+    </div>
     <div class="electoral-bar">
         <div class="candidate trump-electoral" id="trumpBar">
-            <span id="trumpVotes">0 </span>
+            <span id="trumpElectoralVotes">0</span>
         </div>
         <div class="candidate harris-electoral" id="harrisBar">
-            <span id="harrisVotes">0 </span>
+            <span id="harrisElectoralVotes">0</span>
         </div>
     </div>    
 
@@ -1042,6 +1054,10 @@
                 <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
                 <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
             </svg>
+        </div>
+
+        <div class="state-data">
+            <h1>State Data Coming Soon!</h1>
         </div>
     </div>
     <div id="info"></div>
