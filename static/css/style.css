@@ -30,14 +30,13 @@ text {
 #map {
     padding: 2rem;
     width: 70%;
-    height: 80vh;
-    border: 1px solid black;
 }
 
 .state-data {
-    margin-left: 1rem;
+    width: 30%;
     text-align: center;
     justify-content: center;
+    border-left: 2px solid black;
 }
 
 a:hover path {
@@ -172,4 +171,25 @@ a:hover path {
 
 .harris-vote-totals h1 {
     float: right;
+}
+
+@media (max-width: 1398px) {
+
+    #map {
+        padding: 0;
+        width: 100%;
+    }
+
+    .map-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .state-data {
+        padding-left: 0;
+        margin-top: 2rem;
+        border-left: none;
+        width: 100%;
+    }
+
 }

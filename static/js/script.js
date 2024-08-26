@@ -90,14 +90,12 @@ function colorStates(data) {
 
                 popup.innerHTML = popupHTML;
                 popup.style.display = 'block';
-                popup.style.left = event.pageX + 10 + 'px';
-                popup.style.top = event.pageY + 10 + 'px';
+                updatePopupPosition(event, popup)
             });
 
             // Add event to update popup position as the mouse moves
             statePath.addEventListener('mousemove', (event) => {
-                popup.style.left = event.pageX + 10 + 'px';
-                popup.style.top = event.pageY + 10 + 'px';
+                updatePopupPosition(event, popup)
             });
 
             // Add event to hide popup when mouse leaves the state
@@ -106,6 +104,19 @@ function colorStates(data) {
             });
         });
     }
+}
+
+// Function to update popup position
+function updatePopupPosition(event, popup) {
+    console.log("HERE")
+    if (event.pageX > (window.innerWidth * 0.70)) {
+        // Position popup to the left of the mouse
+        popup.style.left = event.pageX - popup.offsetWidth - 10 + 'px';
+    } else {
+        // Position popup to the right of the mouse
+        popup.style.left = event.pageX + 10 + 'px';
+    }
+    popup.style.top = event.pageY + 10 + 'px';
 }
 
 // Function to calculate state rating based on margin
