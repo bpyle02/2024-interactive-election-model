@@ -4,6 +4,15 @@ let harrisElectoralVotes = 0
 let trumpTotalVotes = 0
 let harrisTotalVotes = 0
 
+
+fetch('/api/data')
+    .then(response => response.json())
+    .then(data => {
+        colorStates(data);  // Call the function to color states and add hover
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
+
 // Function to color the states and add hover effect
 function colorStates(data) {
 
@@ -57,6 +66,10 @@ function colorStates(data) {
         }
 
         requestAnimationFrame(() => {
+            stateLink.addEventListener("click", () => {
+                getStateData(state, info.electoral_votes, info.expected_turnout, info.r_percent, info.d_percent);
+            });
+
             let trumpPercentage = (trumpElectoralVotes / totalElectoralVotes) * 100;
             let harrisPercentage = (harrisElectoralVotes / totalElectoralVotes) * 100;
     
@@ -132,9 +145,15 @@ function calculateStateRating(margin) {
     }
 }
 
-fetch('/api/data')
-    .then(response => response.json())
-    .then(data => {
-        colorStates(data);  // Call the function to color states and add hover
-    })
-    .catch(error => console.error('Error fetching data:', error));
+function getStateData(state, electoral_votes, expected_turnout, r_percent, d_percent) {
+    popup = document.getElementById("state-data-inner");
+
+    const popupHTML = `
+        <h1>${state} - ${electoral_votes} Electoral Vote</h1>
+        <h3>Expected Turnout: ${Math.round(expected_turnout).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h3>
+        <p>Trump Votes: ${Math.round(expected_turnout * r_percent).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+        <p>Harris Votes: ${Math.round(expected_turnout * d_percent).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+    `;
+
+    popup.innerHTML = popupHTML;
+}
