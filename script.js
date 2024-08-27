@@ -5,7 +5,7 @@ let trumpTotalVotes = 0
 let harrisTotalVotes = 0
 
 
-fetch('/api/data')
+fetch('./data/election_data.json')
     .then(response => response.json())
     .then(data => {
         colorStates(data);  // Call the function to color states and add hover
@@ -15,6 +15,8 @@ fetch('/api/data')
 
 // Function to color the states and add hover effect
 function colorStates(data) {
+
+    console.log("WORKING??")
 
     // Create a popup div
     const popup = document.createElement('div');
@@ -149,7 +151,7 @@ function getStateData(state, electoral_votes, expected_turnout, r_percent, d_per
     popup = document.getElementById("state-data-inner");
 
     const popupHTML = `
-        <h1>${state} - ${electoral_votes} Electoral Vote</h1>
+        <h1>${state} - ${electoral_votes} Electoral Votes</h1>
         <h3>Expected Turnout: ${Math.round(expected_turnout).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h3>
         <p>Trump Votes: ${Math.round(expected_turnout * r_percent).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
         <p>Harris Votes: ${Math.round(expected_turnout * d_percent).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
