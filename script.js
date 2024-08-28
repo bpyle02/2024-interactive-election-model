@@ -82,8 +82,8 @@ function colorStates(data) {
             document.getElementById('trumpElectoralVotes').textContent = trumpElectoralVotes + " ";
             document.getElementById('harrisElectoralVotes').textContent = harrisElectoralVotes + " ";
 
-            document.getElementById("trumpTotalVotes").textContent = Math.round(trumpTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " Votes";
-            document.getElementById("harrisTotalVotes").textContent = Math.round(harrisTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " Votes";
+            document.getElementById("trumpTotalVotes").textContent = Math.round(trumpTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " (" + (trumpTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%)";
+            document.getElementById("harrisTotalVotes").textContent = "(" + (harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%) " + Math.round(harrisTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
             // Add hover event to show popup
             stateLink.addEventListener('mouseenter', (event) => {
@@ -123,7 +123,6 @@ function colorStates(data) {
 
 // Function to update popup position
 function updatePopupPosition(event, popup) {
-    console.log("HERE")
     if (event.pageX > (window.innerWidth * 0.70)) {
         // Position popup to the left of the mouse
         popup.style.left = event.pageX - popup.offsetWidth - 10 + 'px';

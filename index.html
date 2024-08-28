@@ -15,24 +15,30 @@
 </head>
 
 <body>
-    <div class="candidate-wrapper">
-        <div class="trump-vote-totals">
-            <h1>Trump</h1>
-            <h3 id="trumpTotalVotes">0</h3>
+    <div class="header">
+        <img src="./images/trump.jpg" />
+        <div class="electoral-bar-wrapper">
+            <div class="candidates">
+                <div class="trump-vote-totals">
+                    <h1>Trump</h1>
+                    <h4 id="trumpTotalVotes">0</h4>
+                </div>
+        
+                <div class="harris-vote-totals">
+                    <h1>Harris</h1><br />
+                    <h4 id="harrisTotalVotes">0</h4>
+                </div>
+            </div>
+            <div class="electoral-bar">
+                <div class="candidate trump-electoral" id="trumpBar">
+                    <span id="trumpElectoralVotes">0</span>
+                </div>
+                <div class="candidate harris-electoral" id="harrisBar">
+                    <span id="harrisElectoralVotes">0</span>
+                </div>
+            </div>
         </div>
-
-        <div class="harris-vote-totals">
-            <h1>Harris</h1>
-            <h3 id="harrisTotalVotes">0</h3>
-        </div>
-    </div>
-    <div class="electoral-bar">
-        <div class="candidate trump-electoral" id="trumpBar">
-            <span id="trumpElectoralVotes">0</span>
-        </div>
-        <div class="candidate harris-electoral" id="harrisBar">
-            <span id="harrisElectoralVotes">0</span>
-        </div>
+        <img src="./images/harris.jpg" />
     </div>
 
     <div class="map-wrapper">
@@ -56,11 +62,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="324.3644444444444" y="106.90814814814814" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,105.7188,34.8441)" class="sm_label_SD">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499998428909862">SD</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499998428909862">3</tspan>
                     </text>
                 </a>
                 <a xlink:title="Oregon" target="_blank" id="OR_Link">
@@ -71,11 +77,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="107.91925925925925" y="81.83259259259259" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,35.1737,26.6714)" class="sm_label_OR">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499996767397278">OR</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499996767397278">8</tspan>
                     </text>
                 </a>
                 <a xlink:title="Kentucky" target="_blank" id="KY_Link">
@@ -86,11 +92,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="506.29703703703706" y="200.3348148148148" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,165.0153,65.2943)" class="sm_label_KY">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500006465205416">KY</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500006465205416">8</tspan>
                     </text>
                 </a>
                 <a xlink:title="Mississippi" target="_blank" id="MS_Link">
@@ -101,11 +107,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="449.06814814814817" y="280.61703703703705" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,146.363,91.4604)" class="sm_label_MS">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500002124927676">MS</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500002124927676">6</tspan>
                     </text>
                 </a>
                 <a xlink:title="Montana" target="_blank" id="MT_Link">
@@ -116,11 +122,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="230.06148148148148" y="59.318518518518516" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,74.983,19.3334)" class="sm_label_MT">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999892623336">MT</tspan>
+                        <tspan dy="7.49999892623336">4</tspan>
                     </text>
                 </a>
                 <a xlink:title="Kansas" target="_blank" id="KS_Link">
@@ -132,11 +138,11 @@
                         fill-opacity="1">
                     </path>
                     <text x="341.82296296296295" y="196.96444444444444" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,111.409,64.1958)" class="sm_label_KS">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499997422960064">KS</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499997422960064">6</tspan>
                     </text>
                 </a>
                 <a xlink:title="Rhode_Island" target="_blank" id="RI_Link">
@@ -146,17 +152,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="651.574074074074" y="154.1435185185185" width="45" height="28.749999999999996"
+                    <rect x="676.574074074074" y="154.1435185185185" width="75" height="28.749999999999996"
                         id="RI_Path_Rect" r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999"
                         fill="#d6d6d6" stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,219.6982,54.9246)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="674.074074074074" y="168.5185185185185" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="714.074074074074" y="168.5185185185185" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,219.6982,54.9246)" class="sm_label_RI">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999434859663">RI</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999434859663">RI  4</tspan>
                     </text>
                 </a>
                 <a xlink:title="Michigan" target="_blank" id="MI_Link">
@@ -167,11 +173,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="494.36592592592586" y="125.51259259259258" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,161.1267,40.9078)" class="sm_label_MI">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499992647524223">MI</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499992647524223">15</tspan>
                     </text>
                 </a>
                 <a xlink:title="Minnesota" target="_blank" id="MN_Link">
@@ -182,11 +188,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="384.55925925925925" y="76.17037037037036" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,125.3378,24.8259)" class="sm_label_MN">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999836109302">MN</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999836109302">10</tspan>
                     </text>
                 </a>
                 <a xlink:title="Missouri" target="_blank" id="MO_Link">
@@ -197,11 +203,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="410.24148148148146" y="200.3348148148148" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,133.7083,65.2943)" class="sm_label_MO">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500006465205416">MO</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500006465205416">10</tspan>
                     </text>
                 </a>
                 <a xlink:title="Utah" target="_blank" id="UT_Link">
@@ -212,11 +218,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="190.15629629629632" y="172.56296296296296" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,61.9769,56.2427)" class="sm_label_UT">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500005199291081">UT</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500005199291081">8</tspan>
                     </text>
                 </a>
                 <a xlink:title="Ohio" target="_blank" id="OH_Link">
@@ -226,12 +232,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="516.88" y="162.9911111111111" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="516.88" y="162.9911111111111" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,168.4646,53.123)" class="sm_label_OH">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500006985134547">OH</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500006985134547">17</tspan>
                     </text>
                 </a>
                 <a xlink:title="Oklahoma" target="_blank" id="OK_Link">
@@ -242,11 +248,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="357.59629629629626" y="242.66666666666666" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,116.5499,79.0914)" class="sm_label_OK">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999491373697">OK</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999491373697">7</tspan>
                     </text>
                 </a>
                 <a xlink:title="Maryland" target="_blank" id="MD_Link">
@@ -256,17 +262,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="651.574074074074" y="174.36574074074073" width="45" height="28.749999999999996"
+                    <rect x="676.574074074074" y="174.36574074074073" width="75" height="28.749999999999996"
                         id="MD_Path_Rect" r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999"
                         fill="#d6d6d6" stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,219.6982,61.5155)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="674.074074074074" y="188.74074074074073" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="714.074074074074" y="188.74074074074073" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,219.6982,61.5155)" class="sm_label_MD">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500002825701671">MD</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500002825701671">MD 10</tspan>
                     </text>
                 </a>
                 <a xlink:title="Connecticut" target="_blank" id="CT_Link">
@@ -276,17 +282,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="651.574074074074" y="133.9212962962963" width="45" height="28.749999999999996"
+                    <rect x="676.574074074074" y="133.9212962962963" width="75" height="28.749999999999996"
                         id="CT_Path_Rect" r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999"
                         fill="#d6d6d6" stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,219.6982,48.3336)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="674.074074074074" y="148.2962962962963" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="714.074074074074" y="148.2962962962963" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,219.6982,48.3336)" class="sm_label_CT">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.50000113028068">CT</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.50000113028068">CT 7</tspan>
                     </text>
                 </a>
                 <a xlink:title="Idaho" target="_blank" id="ID_Link">
@@ -297,11 +303,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="168.5185185185185" y="101.31333333333333" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,54.9246,33.0206)" class="sm_label_ID">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500001729329426">ID</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500001729329426">4</tspan>
                     </text>
                 </a>
                 <a xlink:title="Arizona" target="_blank" id="AZ_Link">
@@ -312,11 +318,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="177.55111111111108" y="243.34074074074073" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,57.8685,79.3111)" class="sm_label_AZ">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999672218604">AZ</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999672218604">11</tspan>
                     </text>
                 </a>
                 <a xlink:title="Massachusetts" target="_blank" id="MA_Link">
@@ -326,17 +332,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="651.574074074074" y="113.69907407407408" width="45" height="28.749999999999996"
+                    <rect x="676.574074074074" y="113.69907407407408" width="75" height="28.749999999999996"
                         id="ME_Path_Rect" r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999"
                         fill="#d6d6d6" stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,219.6982,41.7427)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="674.074074074074" y="128.07407407407408" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="714.074074074074" y="128.07407407407408" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,219.6982,41.7427)" class="sm_label_MA">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499992653175639">MA</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499992653175639">MA 11</tspan>
                     </text>
                 </a>
                 <a xlink:title="Iowa" target="_blank" id="IA_Link">
@@ -347,11 +353,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="397.3666666666667" y="143.98222222222222" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,129.5121,46.9275)" class="sm_label_IA">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499998711480032">IA</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499998711480032">6</tspan>
                     </text>
                 </a>
                 <a xlink:title="Indiana" target="_blank" id="IN_Link">
@@ -362,11 +368,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="482.09777777777776" y="170.74296296296296" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,157.1282,55.6496)" class="sm_label_IN">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.4999972647207755">IN</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.4999972647207755">11</tspan>
                     </text>
                 </a>
                 <a xlink:title="Illinois" target="_blank" id="IL_Link">
@@ -377,11 +383,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="445.29333333333335" y="170.47333333333333" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,145.1326,55.5617)" class="sm_label_IL">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500005696614579">IL</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500005696614579">19</tspan>
                     </text>
                 </a>
                 <a xlink:title="Vermont" target="_blank" id="VT_Link">
@@ -391,17 +397,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="617.8703703703703" y="133.9212962962963" width="45" height="28.749999999999996"
+                    <rect x="617.8703703703703" y="133.9212962962963" width="75" height="28.749999999999996"
                         id="VT_Path_Rect" r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999"
                         fill="#d6d6d6" stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,208.7133,48.3336)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="640.3703703703703" y="148.2962962962963" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="655.3703703703703" y="148.2962962962963" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,208.7133,48.3336)" class="sm_label_VT">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.50000113028068">VT</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.50000113028068">VT 3</tspan>
                     </text>
                 </a>
                 <a xlink:title="Arkansas" target="_blank" id="AR_Link">
@@ -412,11 +418,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="412.6681481481482" y="249.07037037037037" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,134.4992,81.1785)" class="sm_label_AR">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.4999968352141195">AR</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.4999968352141195">6</tspan>
                     </text>
                 </a>
                 <a xlink:title="Colorado" target="_blank" id="CO_Link">
@@ -426,12 +432,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="259.0466666666667" y="184.0222222222222" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="259.0466666666667" y="184.0222222222222" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,84.43,59.9776)" class="sm_label_CO">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.5000054253472115">CO</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.5000054253472115">10</tspan>
                     </text>
                 </a>
                 <a xlink:title="Virginia" target="_blank" id="VA_Link">
@@ -441,12 +447,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="571.8844444444444" y="192.92" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="571.8844444444444" y="192.92" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,186.392,62.8776)" class="sm_label_VA">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500001831054675">VA</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500001831054675">13</tspan>
                     </text>
                 </a>
                 <a xlink:title="Nevada" target="_blank" id="NV_Link">
@@ -457,11 +463,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="132.9274074074074" y="155.37407407407406" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,43.3245,50.6404)" class="sm_label_NV">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500004860206872">NV</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500004860206872">6</tspan>
                     </text>
                 </a>
                 <a xlink:title="California" target="_blank" id="CA_Link">
@@ -472,11 +478,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="89.65185185185184" y="188.60592592592593" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,29.2199,61.4716)" class="sm_label_CA">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499999412254056">CA</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499999412254056">54</tspan>
                     </text>
                 </a>
                 <a xlink:title="Pennsylvania" target="_blank" id="PA_Link">
@@ -486,12 +492,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="573.637037037037" y="141.48814814814816" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="573.637037037037" y="141.48814814814816" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,186.9632,46.1147)" class="sm_label_PA">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500004227249718">PA</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500004227249718">19</tspan>
                     </text>
                 </a>
                 <a xlink:title="New_York" target="_blank" id="NY_Link">
@@ -502,11 +508,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="596.5555555555555" y="104.27925925925925" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,194.4329,33.9873)" class="sm_label_NY">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500000531231905">NY</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500000531231905">28</tspan>
                     </text>
                 </a>
                 <a xlink:title="Tennessee" target="_blank" id="TN_Link">
@@ -516,12 +522,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="486.2096296296296" y="231.2074074074074" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="486.2096296296296" y="231.2074074074074" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,158.4683,75.3565)" class="sm_label_TN">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499994687680839">TN</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499994687680839">11</tspan>
                     </text>
                 </a>
                 <a xlink:title="North_Dakota" target="_blank" id="ND_Link">
@@ -531,12 +537,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="324.0274074074074" y="61.61037037037037" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="324.0274074074074" y="61.61037037037037" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,105.6089,20.0804)" class="sm_label_ND">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500001641732673">ND</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500001641732673">3</tspan>
                     </text>
                 </a>
                 <a xlink:title="North_Carolina" target="_blank" id="NC_Link">
@@ -546,12 +552,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="582.5348148148148" y="222.377037037037" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="582.5348148148148" y="222.377037037037" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,189.8632,72.4784)" class="sm_label_NC">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500007618091701">NC</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500007618091701">16</tspan>
                     </text>
                 </a>
                 <a xlink:title="Louisiana" target="_blank" id="LA_Link">
@@ -561,12 +567,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="413.14" y="295.10962962962964" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="413.14" y="295.10962962962964" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,134.653,96.1839)" class="sm_label_LA">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500010489004637">LA</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500010489004637">8</tspan>
                     </text>
                 </a>
                 <a xlink:title="Texas" target="_blank" id="TX_Link">
@@ -577,11 +583,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="335.4866666666666" y="306.90592592592594" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,109.3438,100.0286)" class="sm_label_TX">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500011619285317">TX</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500011619285317">40</tspan>
                     </text>
                 </a>
                 <a xlink:title="New_Mexico" target="_blank" id="NM_Link">
@@ -591,12 +597,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="245.7" y="250.3511111111111" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="245.7" y="250.3511111111111" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,80.08,81.5959)" class="sm_label_NM">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.50000637478297">NM</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.50000637478297">5</tspan>
                     </text>
                 </a>
                 <a xlink:title="New_Jersey" target="_blank" id="NJ_Link">
@@ -606,17 +612,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="617.8703703703703" y="154.1435185185185" width="45" height="28.749999999999996"
+                    <rect x="617.8703703703703" y="154.1435185185185" width="75" height="28.749999999999996"
                         id="NJ_Path_Rect" r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999"
                         fill="#d6d6d6" stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,208.7133,54.9246)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="640.3703703703703" y="168.5185185185185" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="655.3703703703703" y="168.5185185185185" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,208.7133,54.9246)" class="sm_label_NJ">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999434859663">NJ</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999434859663">NJ 14</tspan>
                     </text>
                 </a>
                 <a xlink:title="New_Hampshire" target="_blank" id="NH_Link">
@@ -626,17 +632,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="651.574074074074" y="93.47685185185185" width="45" height="28.749999999999996"
+                    <rect x="676.574074074074" y="93.47685185185185" width="75" height="28.749999999999996"
                         id="NH_Path_Rect" r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999"
                         fill="#d6d6d6" stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,219.6982,35.1517)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="674.074074074074" y="107.85185185185185" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="714.074074074074" y="107.85185185185185" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,219.6982,35.1517)" class="sm_label_NH">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999943485966">NH</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.49999943485966">NH 4</tspan>
                     </text>
                 </a>
                 <a xlink:title="Wyoming" target="_blank" id="WY_Link">
@@ -646,12 +652,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="243.54296296296297" y="121.94" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="243.54296296296297" y="121.94" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,79.377,39.7434)" class="sm_label_WY">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499997558593748">WY</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499997558593748">3</tspan>
                     </text>
                 </a>
                 <a xlink:title="Hawaii" target="_blank" id="HI_Link">
@@ -661,17 +667,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="214.77407407407406" y="376.58796296296293" width="45" height="28.749999999999996"
+                    <rect x="184.77407407407406" y="376.58796296296293" width="75" height="28.749999999999996"
                         r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999" fill="#d6d6d6"
                         stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,77.3338,127.425)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="237.27407407407406" y="390.96296296296293" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="222.27407407407406" y="390.96296296296293" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,77.3338,127.425)" class="sm_label_HI">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.5000113028066835">HI</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.5000113028066835">HI 4</tspan>
                     </text>
                 </a>
                 <a xlink:title="West_Virginia" target="_blank" id="WV_Link">
@@ -682,11 +688,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="546.1348148148148" y="180.38222222222223" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,177.9995,58.7912)" class="sm_label_WV">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500004814995663">WV</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500004814995663">4</tspan>
                     </text>
                 </a>
                 <a xlink:title="Wisconsin" target="_blank" id="WI_Link">
@@ -697,11 +703,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="434.03629629629626" y="99.89777777777776" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,141.4637,32.5593)" class="sm_label_WI">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499996405707449">WI</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499996405707449">10</tspan>
                     </text>
                 </a>
                 <a xlink:title="Washington_DC" target="_blank" id="DC_Link">
@@ -711,17 +717,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="617.8703703703703" y="194.58796296296296" width="45" height="28.749999999999996"
+                    <rect x="617.8703703703703" y="194.58796296296296" width="75" height="28.749999999999996"
                         id="DC_Path_Rect" r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999"
                         fill="#d6d6d6" stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,208.7133,68.1064)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="640.3703703703703" y="208.96296296296296" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="655.3703703703703" y="208.96296296296296" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,208.7133,68.1064)" class="sm_label_DC">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499996044017649">DC</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499996044017649">DC 3</tspan>
                     </text>
                 </a>
                 <a xlink:title="Deleware" target="_blank" id="DE_Link">
@@ -731,17 +737,17 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <rect x="617.8703703703703" y="174.36574074074073" width="45" height="28.749999999999996"
+                    <rect x="617.8703703703703" y="174.36574074074073" width="75" height="28.749999999999996"
                         id="DE_Path_Rect" r="5.749999999999999" rx="5.749999999999999" ry="5.749999999999999"
                         fill="#d6d6d6" stroke="#ffffff" transform="matrix(0.6741,0,0,0.6741,208.7133,61.5155)"
                         stroke-width="2.8026615969581754" opacity="1" stroke-opacity="1" stroke-linejoin="round"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
-                        fill-opacity="1"></rect><text x="640.3703703703703" y="188.74074074074073" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill-opacity="1"></rect><text x="655.3703703703703" y="188.74074074074073" text-anchor="middle"
+                        font="8px &quot;arial&quot;" stroke="none" fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,208.7133,61.5155)" class="sm_label_DE">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500002825701671">DE</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500002825701671">DE 3</tspan>
                     </text>
                 </a>
                 <a xlink:title="Alabama" target="_blank" id="AL_Link">
@@ -751,12 +757,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="485.5355555555555" y="277.8533333333333" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="485.5355555555555" y="277.8533333333333" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,158.2486,90.5596)" class="sm_label_AL">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417584279378218">AL</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417584279378218">9</tspan>
                     </text>
                 </a>
                 <a xlink:title="Georgia" target="_blank" id="GA_Link">
@@ -766,12 +772,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="528.6088888888889" y="273.0674074074074" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="528.6088888888889" y="273.0674074074074" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,172.2873,88.9997)" class="sm_label_GA">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.4175622841164">GA</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.4175622841164">16</tspan>
                     </text>
                 </a>
                 <a xlink:title="South_Carolina" target="_blank" id="SC_Link">
@@ -781,12 +787,12 @@
                         stroke-linejoin="round" transform="matrix(0.6741,0,0,0.6741,0,0)"
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
-                    <text x="558.6725925925925" y="251.2948148148148" text-anchor="middle" font="10px &quot;Arial&quot;"
-                        stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                    <text x="558.6725925925925" y="251.2948148148148" text-anchor="middle" font="8px &quot;arial&quot;"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,182.0859,81.9035)" class="sm_label_SC">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417567958125346">SC</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417567958125346">9</tspan>
                     </text>
                 </a>
                 <a xlink:title="Maine_CD_2" target="_blank" id="ME2_Link">
@@ -804,10 +810,10 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1">
                     </rect>
-                    <text x="690.9259259259259" y="283.1111111111111" text-anchor="middle" font="10px &quot;Arial&quot;"
+                    <text x="690.9259259259259" y="283.1111111111111" text-anchor="middle" font="8px &quot;arial&quot;"
                         stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,225.1907,92.2733)" class="sm_label_ME2">
                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417549557156008">2</tspan>
                     </text>
@@ -819,10 +825,10 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1">
                     </path>
-                    <text x="587.7925925925925" y="260.1925925925926" text-anchor="start" font="10px &quot;Arial&quot;"
+                    <text x="587.7925925925925" y="260.1925925925926" text-anchor="start" font="8px &quot;arial&quot;"
                         stroke="none" fill="#000000"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        style="text-anchor: start; cursor: pointer; font-size: 22px;"
+                        stroke-width="0" font-size="18px" font-weight="bold" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,191.5768,84.8035)" class="sm_label_ME">
                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.4999961570457">Maine</tspan>
                     </text>
@@ -833,10 +839,10 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1">
                     </rect>
-                    <text x="620.1481481481482" y="283.1111111111111" text-anchor="middle" font="10px &quot;Arial&quot;"
+                    <text x="620.1481481481482" y="283.1111111111111" text-anchor="middle" font="8px &quot;arial&quot;"
                         stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,202.1224,92.2733)" class="sm_label_ME_popular">
                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417549557156008">Popular
                         </tspan>
@@ -857,10 +863,10 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1">
                     </rect>
-                    <text x="667.3333333333333" y="283.1111111111111" text-anchor="middle" font="10px &quot;Arial&quot;"
+                    <text x="667.3333333333333" y="283.1111111111111" text-anchor="middle" font="8px &quot;arial&quot;"
                         stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,217.5012,92.2733)" class="sm_label_ME1">
                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417549557156008">1</tspan>
                     </text>
@@ -872,10 +878,10 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1">
                     </path>
-                    <text x="587.7925925925925" y="310.0740740740741" text-anchor="start" font="10px &quot;Arial&quot;"
+                    <text x="587.7925925925925" y="310.0740740740741" text-anchor="start" font="8px &quot;arial&quot;"
                         stroke="none" fill="#000000"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        style="text-anchor: start; cursor: pointer; font-size: 22px;"
+                        stroke-width="0" font-size="18px" font-weight="bold" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,191.5768,101.0612)" class="sm_label_NE">
                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.500007911964701">Nebraska
                         </tspan>
@@ -887,10 +893,10 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1">
                     </rect>
-                    <text x="620.1481481481482" y="332.9925925925926" text-anchor="middle" font="10px &quot;Arial&quot;"
+                    <text x="620.1481481481482" y="332.9925925925926" text-anchor="middle" font="8px &quot;arial&quot;"
                         stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,202.1224,108.5309)" class="sm_label_NE_popular">
                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417591829653134">Popular
                         </tspan>
@@ -910,10 +916,10 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1">
                     </rect>
-                    <text x="714.5185185185185" y="332.9925925925926" text-anchor="middle" font="10px &quot;Arial&quot;"
+                    <text x="714.5185185185185" y="332.9925925925926" text-anchor="middle" font="8px &quot;arial&quot;"
                         stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,232.8801,108.5309)" class="sm_label_NE3">
                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417591829653134">3</tspan>
                     </text>
@@ -932,10 +938,10 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1">
                     </rect>
-                    <text x="690.9259259259259" y="332.9925925925926" text-anchor="middle" font="10px &quot;Arial&quot;"
+                    <text x="690.9259259259259" y="332.9925925925926" text-anchor="middle" font="8px &quot;arial&quot;"
                         stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,225.1907,108.5309)" class="sm_label_NE2">
                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417591829653134">2</tspan>
                     </text>
@@ -954,10 +960,10 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1">
                     </rect>
-                    <text x="667.3333333333333" y="332.9925925925926" text-anchor="middle" font="10px &quot;Arial&quot;"
+                    <text x="667.3333333333333" y="332.9925925925926" text-anchor="middle" font="8px &quot;arial&quot;"
                         stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,217.5012,108.5309)" class="sm_label_NE1">
                         <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417591829653134">1</tspan>
                     </text>
@@ -970,11 +976,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="559.4814814814814" y="332.52074074074073" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,182.3495,108.3771)" class="sm_label_FL">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417541735613781">FL</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417541735613781">30</tspan>
                     </text>
                 </a>
                 <a xlink:title="Alaska" target="_blank" id="AK_Link">
@@ -985,11 +991,11 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="117.96296296296296" y="330.2962962962963" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,38.4472,107.6521)" class="sm_label_AK">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417554078278727">AK</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.417554078278727">3</tspan>
                     </text>
                 </a>
                 <a xlink:title="Washington" target="_blank" id="WA_Link">
@@ -1000,22 +1006,22 @@
                         style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; cursor: pointer; stroke-opacity: 1; stroke-linejoin: round; fill-opacity: 1;"
                         fill-opacity="1"></path>
                     <text x="123.08592592592592" y="30.063703703703702" text-anchor="middle"
-                        font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff"
-                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font: bold 22px Arial; cursor: pointer;"
-                        stroke-width="0" font-size="22px" font-weight="bold" font-family="Arial"
+                        fill="#ffffff"
+                        style="text-anchor: middle; cursor: pointer; font-size: 18px;"
+                        stroke-width="0" font-size="18px" font-weight="light" font-family="Arial"
                         transform="matrix(0.6741,0,0,0.6741,40.1169,9.7985)" class="sm_label_WA">
-                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499999213042081">WA</tspan>
+                        <tspan style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" dy="7.499999213042081">12</tspan>
                     </text>
                 </a>
                 <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
                 <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
             </svg>
         </div>
+    </div>
 
         <div class="state-data">
             <div id="state-data-inner"></div>
         </div>
-    </div>
     <div id="info"></div>
 </body>
 
