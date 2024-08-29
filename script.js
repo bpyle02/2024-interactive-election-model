@@ -82,8 +82,16 @@ function colorStates(data) {
             document.getElementById('trumpElectoralVotes').textContent = trumpElectoralVotes + " ";
             document.getElementById('harrisElectoralVotes').textContent = harrisElectoralVotes + " ";
 
-            document.getElementById("trumpTotalVotes").textContent = Math.round(trumpTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " (" + (trumpTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%)";
-            document.getElementById("harrisTotalVotes").textContent = "(" + (harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%) " + Math.round(harrisTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            document.getElementById("trump-vote-totals").innerHTML = `
+                <h1>Trump</h1><br />
+                <h4 id="harrisTotalVotes">${Math.round(trumpTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}&nbsp;</h4>
+                <h4>(${(trumpTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%)"}</h4>
+            `
+            document.getElementById("harris-vote-totals").innerHTML = `
+                <h1>Harris</h1><br />
+                <h4 id="harrisTotalVotes">&nbsp;${Math.round(harrisTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                <h4>(${(harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%) "}</h4>
+            `
 
             // Add hover event to show popup
             stateLink.addEventListener('mouseenter', (event) => {

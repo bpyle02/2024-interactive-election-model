@@ -143,7 +143,7 @@ a:hover path {
 }
 
 .header img {
-    height: 10rem;
+    height: 14rem;
     aspect-ratio: 500 / 625;
     border: 2px solid black;
 }
@@ -172,7 +172,7 @@ a:hover path {
 
 .electoral-bar {
     width: 100%;
-    height: 50px; /* Adjust the height of the electoral bar */
+    height: 3rem; /* Adjust the height of the electoral bar */
     overflow: hidden;
     position: relative;
 }
@@ -214,19 +214,27 @@ a:hover path {
     z-index: 1;
 }
 
-.harris-vote-totals h1 {
+#harris-vote-totals h1 {
     float: right;
 }
 
-.harris-vote-totals h4 {
+#harris-vote-totals h4 {
     float: right;
+}
+
+#trump-vote-totals h1 {
+    float: left;
+}
+
+#trump-vote-totals h4 {
+    float: left;
 }
 
 @media (max-width: 1398px) {
 
     #map {
         padding: 0;
-        width: 100%;
+        width: 115%;
     }
 
     .map-wrapper {
@@ -241,9 +249,46 @@ a:hover path {
         width: 100%;
     }
 
+    .header {
+        margin: 0 0 2rem 0;
+    }
+
     .header img {
-        height: 10rem;
-        width: 9rem;
+        max-width: 240px;
+        max-height: 300px;
+        width: 30%;
+        height: 30%;
+    }
+
+    .harris-vote-totals h4 {
+        float: right;
+    }
+
+    .electoral-bar {
+        width: 100%;
+        height: 1.5rem;
+    }
+
+    .electoral-bar span {
+        font-size: medium;
+    }
+
+    #state-popup {
+        -ms-transform: scale(0.7, 0.7); /* IE 9 */
+        -webkit-transform: scale(0.7, 0.7); /* Safari */
+        transform: scale(0.7, 0.7);
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+    
+    h2 {
+        font-size: 0.8rem;
+    }
+    
+    h4 {
+        font-size: 0.8rem;
     }
 
 }
