@@ -1,0 +1,13 @@
+0000000000000000000000000000000000000000 aaad64b4ef7bd8f750bdc6541a6660eac394753b bpyle02 <mail4brando@gmail.com> 1724527489 -0400	commit (initial): first commit
+aaad64b4ef7bd8f750bdc6541a6660eac394753b 786b102d23e703114be842a2af53fc1ee8f76809 bpyle02 <mail4brando@gmail.com> 1724528391 -0400	commit: added requirements.txt
+786b102d23e703114be842a2af53fc1ee8f76809 b311a4e3410292b8f5b36e43fa09e7c10490bf20 bpyle02 <mail4brando@gmail.com> 1724529716 -0400	commit: changed host ip
+b311a4e3410292b8f5b36e43fa09e7c10490bf20 ae3f0526d8de8955542367b575d1ce0f461fef2b bpyle02 <mail4brando@gmail.com> 1724531698 -0400	commit: removed pywin32
+ae3f0526d8de8955542367b575d1ce0f461fef2b 67b0bd84f59a648dc1fbfcc58ee1bf5e11a9a62f bpyle02 <mail4brando@gmail.com> 1724554669 -0400	commit: Updated styling
+67b0bd84f59a648dc1fbfcc58ee1bf5e11a9a62f a79e4441db868d38b1500eec3c4db026f613bd46 bpyle02 <mail4brando@gmail.com> 1724554999 -0400	commit: removed links to wikipedia to improve usability on mobile
+a79e4441db868d38b1500eec3c4db026f613bd46 f4f3a928f4ccd289993f47261bcbd1e8d0d1b890 bpyle02 <mail4brando@gmail.com> 1724640982 -0400	commit: Made the website responsive
+f4f3a928f4ccd289993f47261bcbd1e8d0d1b890 05ecd870aea672a91039be0af73ae67d8203c046 bpyle02 <mail4brando@gmail.com> 1724708779 -0400	commit: Added state data when you click a state
+05ecd870aea672a91039be0af73ae67d8203c046 0191b4db1ae333ba56480c09301d1c44cd9b5ac5 bpyle02 <mail4brando@gmail.com> 1724803113 -0400	commit: removed Python to make hosting the site easier
+0191b4db1ae333ba56480c09301d1c44cd9b5ac5 885a76328af4d474823469047f5bd4be66153418 bpyle02 <mail4brando@gmail.com> 1724878255 -0400	commit: Lots of UI improvements
+885a76328af4d474823469047f5bd4be66153418 d2b9fe0eea4a54972940eeed0f9ba4651e25d64f bpyle02 <mail4brando@gmail.com> 1724878258 -0400	pull --tags origin main: Merge made by the 'ort' strategy.
+d2b9fe0eea4a54972940eeed0f9ba4651e25d64f d138c1cc7f23f0dba8eef431254a5eb43c83c8ec bpyle02 <mail4brando@gmail.com> 1724900626 -0400	commit: Fixed mobile aspect ratio styling
+d138c1cc7f23f0dba8eef431254a5eb43c83c8ec b054c0f27a780ed17b9ad149cb45a135bab57261 bpyle02 <mail4brando@gmail.com> 1724992456 -0400	commit: connected to google sheets database
