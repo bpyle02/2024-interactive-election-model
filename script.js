@@ -4,20 +4,39 @@ let harrisElectoralVotes = 0
 let trumpTotalVotes = 0
 let harrisTotalVotes = 0
 
+const sheetName = encodeURIComponent("Sheet1")
+const sheetId = '17tVILGOy5Nk0l4MvxnC1r7vSzAnnBlvSfXQylnVORes'; // Replace with your spreadsheet ID
+const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`; // Replace with your sheet name
 
-fetch('./data/election_data.json')
-    .then(response => response.json())
-    .then(data => {
-        colorStates(data);  // Call the function to color states and add hover
-    })
-    .catch(error => console.error('Error fetching data:', error));
+model_data = {}
 
+fetch(sheetURL)
+    .then(response => response.text())
+    .then(data => handleResponse(data))
+    .catch(error => console.error('Error:', error));
+
+function handleResponse(data) {
+    let sheetObjects = csvToObject(data);
+
+    for (i in sheetObjects) {
+        console.log(sheetObjects[i])
+        model_data[sheetObjects[i]['"State"']] = {
+            "state_abbreviation": sheetObjects[i]['"State Abbreviation"'],
+            "electoral_votes": parseInt(sheetObjects[i]['"Electoral Votes"']),
+            "expected_turnout": parseInt(sheetObjects[i]['"2024 Expected Turnout"']),
+            "r_percent": parseFloat(sheetObjects[i]['"R %"']),
+            "d_percent": parseFloat(sheetObjects[i]['"D %"']),
+            "3rd_percent": parseFloat(sheetObjects[i]['"3rd Party %"'])
+        }
+
+        console.log(model_data[i])
+    }
+
+    colorStates(model_data)
+}
 
 // Function to color the states and add hover effect
 function colorStates(data) {
-
-    console.log("WORKING??")
-
     // Create a popup div
     const popup = document.createElement('div');
     popup.id = 'state-popup';
@@ -40,6 +59,8 @@ function colorStates(data) {
         margin = info.r_percent - info.d_percent;
         harrisTotalVotes += info.expected_turnout * info.d_percent
         trumpTotalVotes += info.expected_turnout * info.r_percent
+
+        console.log(info.d_percent)
 
         // Apply color based on winner
         if (margin < 0) {
@@ -74,22 +95,24 @@ function colorStates(data) {
 
             let trumpPercentage = (trumpElectoralVotes / totalElectoralVotes) * 100;
             let harrisPercentage = (harrisElectoralVotes / totalElectoralVotes) * 100;
-    
+
             // Update bar widths and text
             document.getElementById('trumpBar').style.width = trumpPercentage + '%';
             document.getElementById('harrisBar').style.width = harrisPercentage + '%';
-    
+
             document.getElementById('trumpElectoralVotes').textContent = trumpElectoralVotes + " ";
             document.getElementById('harrisElectoralVotes').textContent = harrisElectoralVotes + " ";
 
+            console.log(trumpTotalVotes)
+
             document.getElementById("trump-vote-totals").innerHTML = `
                 <h1>Trump</h1><br />
-                <h4 id="harrisTotalVotes">${Math.round(trumpTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}&nbsp;</h4>
+                <h4 id="harrisTotalVotes">${Math.round(trumpTotalVotes/100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}&nbsp;</h4>
                 <h4>(${(trumpTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%)"}</h4>
             `
             document.getElementById("harris-vote-totals").innerHTML = `
                 <h1>Harris</h1><br />
-                <h4 id="harrisTotalVotes">&nbsp;${Math.round(harrisTotalVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                <h4 id="harrisTotalVotes">&nbsp;${Math.round(harrisTotalVotes/100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                 <h4>(${(harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%) "}</h4>
             `
 
@@ -100,12 +123,12 @@ function colorStates(data) {
                         <div class='popup-header'>
                             <h2>${state} - ${info.electoral_votes} EV</h2>
                         </div>
-                        <div class='trump' style='width:${info.r_percent * 100}%;'>
-                            <p>${(info.r_percent * 100).toFixed(2)}%</p>
+                        <div class='trump' style='width:${info.r_percent}%;'>
+                            <p>${(info.r_percent).toFixed(2)}%</p>
                             <p>Trump</p>
                         </div>
-                        <div class='harris' style='width:${info.d_percent * 100}%;'>
-                            <p>${(info.d_percent * 100).toFixed(2)}%</p>
+                        <div class='harris' style='width:${info.d_percent}%;'>
+                            <p>${(info.d_percent).toFixed(2)}%</p>
                             <p>Harris</p>
                         </div>
                     </div>
@@ -165,4 +188,53 @@ function getStateData(state, electoral_votes, expected_turnout, r_percent, d_per
     `;
 
     popup.innerHTML = popupHTML;
+}
+
+function csvToObject(csv) {
+    const lines = csv.trim().split('\n');
+    const headers = lines[0].split(',');
+
+    console.log(headers)
+    console.log(lines)
+    const result = {};
+
+    for (let i = 1; i < lines.length; i++) {
+        const currentLine = lines[i].split(',');
+        const stateData = {};
+
+        for (let j = 0; j < headers.length; j++) {
+            const header = headers[j].trim();
+            const value = currentLine[j].trim();
+
+            isNumber = false
+
+            tempValue = value
+
+            tempValue = tempValue.replace(/"/g, '')
+            tempValue = tempValue.replace(/\\/g, '')
+
+            if (value.includes("%")) {
+                tempValue = tempValue.replace("%", "")
+                isNumber = true
+            }
+
+            if (value.includes(",")) {
+                tempValue = tempValue.replace(",", "")
+                isNumber = true
+            }
+
+            if (value.includes(".")) {
+                console.log(tempValue)
+                tempValue = parseFloat(tempValue.replace(".", "")) / 100
+                isNumber = true
+            }
+
+            stateData[header] = tempValue;
+        }
+
+        // Use the first column as the key for the state
+        result[stateData[headers[0]]] = stateData;
+    }
+
+    return result;
 }
