@@ -29,7 +29,7 @@ function handleResponse(data) {
     let sheetObjects = csvToObject(data);
 
     for (i in sheetObjects) {
-        console.log(sheetObjects[i])
+        // console.log(sheetObjects[i])
         model_data[sheetObjects[i]['"State"']] = {
             "state_abbreviation": sheetObjects[i]['"State Abbreviation"'],
             "electoral_votes": parseInt(sheetObjects[i]['"Electoral Votes"']),
@@ -39,7 +39,7 @@ function handleResponse(data) {
             "3rd_percent": parseFloat(sheetObjects[i]['"3rd Party %"'])
         }
 
-        console.log(model_data[i])
+        // console.log(model_data[i])
     }
 
     colorStates(model_data)
@@ -96,6 +96,7 @@ function colorStates(data) {
         }
 
         requestAnimationFrame(() => {
+
             stateLink.addEventListener("click", () => {
                 getStateData(state, info.electoral_votes, info.expected_turnout, info.r_percent, info.d_percent);
             });
@@ -109,13 +110,13 @@ function colorStates(data) {
             trumpLeanPct = trumpLean / trumpElectoralVotes * 100
             trumpTiltPct = trumpTilt / trumpElectoralVotes * 100
 
-            console.log("EV: " + harrisSafe + ", " + trumpSafe)
+            // console.log("EV: " + harrisSafe + ", " + trumpSafe)
 
-            console.log("Trump: " + trumpTilt + ", " + trumpLean + ", " + trumpLikely + ", " + trumpSafe);
-            console.log("Trump: " + (trumpTiltPct + trumpLeanPct + trumpLikelyPct + trumpSafePct));
+            // console.log("Trump: " + trumpTilt + ", " + trumpLean + ", " + trumpLikely + ", " + trumpSafe);
+            // console.log("Trump: " + (trumpTiltPct + trumpLeanPct + trumpLikelyPct + trumpSafePct));
 
-            console.log("Harris: " + harrisTilt + ", " + harrisLean + ", " + harrisLikely + ", " + harrisSafe);
-            console.log("Harris: " + (harrisTiltPct + harrisLeanPct + harrisLikelyPct + harrisSafePct));
+            // console.log("Harris: " + harrisTilt + ", " + harrisLean + ", " + harrisLikely + ", " + harrisSafe);
+            // console.log("Harris: " + (harrisTiltPct + harrisLeanPct + harrisLikelyPct + harrisSafePct));
 
             // Update bar widths and text
             document.getElementById('trumpBar').style.width = (trumpElectoralVotes / totalElectoralVotes) * 100 + '%';
@@ -168,8 +169,6 @@ function colorStates(data) {
 
             document.getElementById('trumpElectoralVotes').textContent = trumpElectoralVotes + " ";
             document.getElementById('harrisElectoralVotes').textContent = harrisElectoralVotes + " ";
-
-            console.log(trumpTotalVotes)
 
             document.getElementById("trump-vote-totals").innerHTML = `
                 <h1>Trump</h1><br />
@@ -287,8 +286,8 @@ function getStateData(state, electoral_votes, expected_turnout, r_percent, d_per
     const popupHTML = `
         <h1>${state} - ${electoral_votes} Electoral Votes</h1>
         <h3>Expected Turnout: ${Math.round(expected_turnout).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h3>
-        <p>Trump Votes: ${Math.round(expected_turnout * r_percent).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-        <p>Harris Votes: ${Math.round(expected_turnout * d_percent).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+        <p>Trump Votes: ${Math.round(expected_turnout * r_percent / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+        <p>Harris Votes: ${Math.round(expected_turnout * d_percent / 100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
     `;
 
     popup.innerHTML = popupHTML;
@@ -298,8 +297,6 @@ function csvToObject(csv) {
     const lines = csv.trim().split('\n');
     const headers = lines[0].split(',');
 
-    console.log(headers)
-    console.log(lines)
     const result = {};
 
     for (let i = 1; i < lines.length; i++) {
