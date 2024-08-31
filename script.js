@@ -1,8 +1,18 @@
 let totalElectoralVotes = 538
-let trumpElectoralVotes = 0
-let harrisElectoralVotes = 0
+
 let trumpTotalVotes = 0
+let trumpElectoralVotes = 0
+let trumpTilt = 0
+let trumpLean = 0
+let trumpLikely = 0
+let trumpSafe = 0
+
 let harrisTotalVotes = 0
+let harrisElectoralVotes = 0
+let harrisTilt = 0
+let harrisLean = 0
+let harrisLikely = 0
+let harrisSafe = 0
 
 const sheetName = encodeURIComponent("Sheet1")
 const sheetId = '17tVILGOy5Nk0l4MvxnC1r7vSzAnnBlvSfXQylnVORes'; // Replace with your spreadsheet ID
@@ -60,23 +70,20 @@ function colorStates(data) {
         harrisTotalVotes += info.expected_turnout * info.d_percent
         trumpTotalVotes += info.expected_turnout * info.r_percent
 
-        console.log(info.d_percent)
-
         // Apply color based on winner
         if (margin < 0) {
-            margin *= -1;
-            statePath.classList.add(calculateStateRating(margin) + 'democrat');
+            statePath.classList.add(calculateStateRating(margin, info.electoral_votes) + 'democrat');
 
             if (statePathRect) {
-                statePathRect.classList.add(calculateStateRating(margin) + 'democrat');
+                statePathRect.classList.add(calculateStateRating(margin, 0) + 'democrat');
             }
 
             harrisElectoralVotes += info.electoral_votes
         } else if (margin > 0) {
-            statePath.classList.add(calculateStateRating(margin) + 'republican');
+            statePath.classList.add(calculateStateRating(margin, info.electoral_votes) + 'republican');
 
             if (statePathRect) {
-                statePathRect.classList.add(calculateStateRating(margin) + 'republican');
+                statePathRect.classList.add(calculateStateRating(margin, 0) + 'republican');
             }
 
             trumpElectoralVotes += info.electoral_votes
@@ -84,7 +91,7 @@ function colorStates(data) {
             statePath.classList.add('tossup');
 
             if (statePathRect) {
-                statePathRect.classList.add(calculateStateRating(margin) + 'tossup');
+                statePathRect.classList.add('tossup');
             }
         }
 
@@ -93,12 +100,71 @@ function colorStates(data) {
                 getStateData(state, info.electoral_votes, info.expected_turnout, info.r_percent, info.d_percent);
             });
 
-            let trumpPercentage = (trumpElectoralVotes / totalElectoralVotes) * 100;
-            let harrisPercentage = (harrisElectoralVotes / totalElectoralVotes) * 100;
+            harrisSafePct = harrisSafe / harrisElectoralVotes * 100
+            harrisLikelyPct = harrisLikely / harrisElectoralVotes * 100
+            harrisLeanPct = harrisLean / harrisElectoralVotes * 100
+            harrisTiltPct = harrisTilt / harrisElectoralVotes * 100
+            trumpSafePct = trumpSafe / trumpElectoralVotes * 100
+            trumpLikelyPct = trumpLikely / trumpElectoralVotes * 100
+            trumpLeanPct = trumpLean / trumpElectoralVotes * 100
+            trumpTiltPct = trumpTilt / trumpElectoralVotes * 100
+
+            console.log("EV: " + harrisSafe + ", " + trumpSafe)
+
+            console.log("Trump: " + trumpTilt + ", " + trumpLean + ", " + trumpLikely + ", " + trumpSafe);
+            console.log("Trump: " + (trumpTiltPct + trumpLeanPct + trumpLikelyPct + trumpSafePct));
+
+            console.log("Harris: " + harrisTilt + ", " + harrisLean + ", " + harrisLikely + ", " + harrisSafe);
+            console.log("Harris: " + (harrisTiltPct + harrisLeanPct + harrisLikelyPct + harrisSafePct));
 
             // Update bar widths and text
-            document.getElementById('trumpBar').style.width = trumpPercentage + '%';
-            document.getElementById('harrisBar').style.width = harrisPercentage + '%';
+            document.getElementById('trumpBar').style.width = (trumpElectoralVotes / totalElectoralVotes) * 100 + '%';
+            document.getElementById('trumpEV').style.width = (trumpElectoralVotes / totalElectoralVotes) * 100 + '%';
+
+            document.getElementById('trumpTilt').style.width = trumpTiltPct + '%';
+            document.getElementById('trumpLean').style.width = trumpLeanPct + '%';
+            document.getElementById('trumpLikely').style.width = trumpLikelyPct + '%';
+            document.getElementById('trumpSafe').style.width = trumpSafePct + '%';
+
+            if (trumpTilt > 0) {
+                document.getElementById('trumpTilt').textContent = trumpTilt;
+            }
+
+            if (trumpLean > 0) {
+                document.getElementById('trumpLean').textContent = trumpLean;
+            }
+
+            if (trumpLikely > 0) {
+                document.getElementById('trumpLikely').textContent = trumpLikely;
+            }
+
+            if (trumpSafe > 0) {
+                document.getElementById('trumpSafe').textContent = trumpSafe;
+            }
+
+            document.getElementById('harrisBar').style.width = (harrisElectoralVotes / totalElectoralVotes) * 100 + '%';
+            document.getElementById('harrisEV').style.width = (harrisElectoralVotes / totalElectoralVotes) * 100 + '%';
+
+            document.getElementById('harrisTilt').style.width = harrisTiltPct + '%';
+            document.getElementById('harrisLean').style.width = harrisLeanPct + '%';
+            document.getElementById('harrisLikely').style.width = harrisLikelyPct + '%';
+            document.getElementById('harrisSafe').style.width = harrisSafePct + '%';
+
+            if (harrisTilt > 0) {
+                document.getElementById('harrisTilt').textContent = harrisTilt;
+            }
+
+            if (harrisLean > 0) {
+                document.getElementById('harrisLean').textContent = harrisLean;
+            }
+
+            if (harrisLikely > 0) {
+                document.getElementById('harrisLikely').textContent = harrisLikely;
+            }
+
+            if (harrisSafe > 0) {
+                document.getElementById('harrisSafe').textContent = harrisSafe;
+            }
 
             document.getElementById('trumpElectoralVotes').textContent = trumpElectoralVotes + " ";
             document.getElementById('harrisElectoralVotes').textContent = harrisElectoralVotes + " ";
@@ -165,14 +231,52 @@ function updatePopupPosition(event, popup) {
 }
 
 // Function to calculate state rating based on margin
-function calculateStateRating(margin) {
-    if (margin < .12 && margin >= .08) {
+function calculateStateRating(margin, electoral_votes) {
+    winner = "trump"
+    
+    if (margin < 0) {
+        winner = "harris"
+    }
+    
+    if (margin < 0) {
+        margin *= -1
+    }
+
+    if (margin < 15 && margin >= 5) {
+
+        if (winner == "trump") {
+            trumpLikely += electoral_votes
+        } else {
+            harrisLikely += electoral_votes
+        }
+
         return "likely_";
-    } else if (margin < .08 && margin >= .03) {
+    } else if (margin < 5 && margin >= 1) {
+
+        if (winner == "trump") {
+            trumpLean += electoral_votes
+        } else {
+            harrisLean += electoral_votes
+        }
+
         return "leans_";
-    } else if (margin < .03) {
+    } else if (margin < 1) {
+
+        if (winner == "trump") {
+            trumpTilt += electoral_votes
+        } else {
+            harrisTilt += electoral_votes
+        }
+
         return "tilt_";
     } else {
+
+        if (winner == "trump") {
+            trumpSafe += electoral_votes
+        } else {
+            harrisSafe += electoral_votes
+        }
+
         return "safe_";
     }
 }

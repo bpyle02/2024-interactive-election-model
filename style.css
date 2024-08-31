@@ -1,8 +1,11 @@
 body {
-    margin: 2rem;
+    background-color: #e0e0e0;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    padding: 2rem;
+    overflow: hidden;
 }
-
 
 h1 {
     font-weight: bold;
@@ -27,10 +30,11 @@ text {
 #map {
     padding: 0;
     width: 70%;
+    padding-right: 90px;
 }
 
 .map-wrapper {
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,13 +143,16 @@ a:hover path {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 10% 2rem 10%;
+    margin: 0 10% 1rem 10%;
 }
 
 .header img {
-    height: 14rem;
-    aspect-ratio: 500 / 625;
     border: 2px solid black;
+    display: block;
+    max-width:300px;
+    max-height:225px;
+    width: auto;
+    height: auto;
 }
 
 .electoral-bar-wrapper {
@@ -188,16 +195,15 @@ a:hover path {
 }
 
 .trump-electoral {
-    background-image: linear-gradient(to right, #d22532 80%, white 100%);
+    background-image: linear-gradient(to right, #d22532 80%, #e0e0e0 100%);
     left: 0;
 }
 
 .harris-electoral {
-    background-image: linear-gradient(to left, #244999 80%, white 100%);
+    background-image: linear-gradient(to left, #244999 80%, #e0e0e0 100%);
     right: 0;
 }
 
-/* Typography */
 .header h1 {
     font-size: 24px;
     margin: 0;
@@ -210,7 +216,7 @@ a:hover path {
 
 /* Ensure the spans for electoral votes are visible */
 .electoral-bar span {
-    color: white;
+    color: #e0e0e0;
     z-index: 1;
 }
 
@@ -230,11 +236,78 @@ a:hover path {
     float: left;
 }
 
+/*  */
+
+.electoral-bar-split {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.33rem;
+}
+
+.candidate-section {
+    display: flex;
+    height: 30px;
+    width: 100%;
+}
+
+/* #harrisEV {
+    background-color: #244999;
+}
+
+#trumpEV {
+    background-color: #d22532;
+} */
+
+.electoral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    font-size: 14px;
+    font-weight: bold;
+    height: 100%;
+}
+
+#harrisEV .safe {
+    background-color: #244999;
+}
+
+#harrisEV .likely {
+    background-color: #577ccc;
+}
+
+#harrisEV .lean {
+    background-color: #8aafff;
+}
+
+#harrisEV .tilt {
+    background-color: #949bb3;
+}
+
+#trumpEV .tilt {
+    background-color: #cf8980;
+}
+
+#trumpEV .lean {
+    background-color: #ff8b98;
+}
+
+#trumpEV .likely {
+    background-color: #ff5865;
+}
+#trumpEV .safe {
+    background-color: #d22532;
+}
+
+/*  */
+
 @media (max-width: 1398px) {
 
     #map {
         padding: 0;
         width: 115%;
+        padding-right: 8%;
     }
 
     .map-wrapper {
@@ -292,4 +365,3 @@ a:hover path {
     }
 
 }
-
