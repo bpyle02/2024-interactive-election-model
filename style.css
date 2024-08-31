@@ -4,7 +4,6 @@ body {
     height: 100vh;
     width: 100vw;
     padding: 2rem;
-    overflow: hidden;
 }
 
 h1 {
@@ -41,12 +40,11 @@ text {
 }
 
 .state-data {
-    padding-left: 0;
     margin-top: 4rem;
-    width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 a:hover path {
@@ -250,14 +248,6 @@ a:hover path {
     height: 30px;
     width: 100%;
 }
-
-/* #harrisEV {
-    background-color: #244999;
-}
-
-#trumpEV {
-    background-color: #d22532;
-} */
 
 .electoral {
     display: flex;
