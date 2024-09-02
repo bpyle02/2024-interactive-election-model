@@ -1,185 +1,91 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;  
+}
+
 body {
-    background-color: #e0e0e0;
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
-    width: 100vw;
-    padding: 2rem;
-}
-
-h1 {
-    font-weight: bold;
-    font-size: 2rem;
-}
-
-h2 {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-h4 {
-    font-weight: bold;
-    font-size: 1rem;
+    margin: 2rem;
+    font-family: "Lato", Helvetica, sans-serif;
+    background-color: #1d2b39;
 }
 
 text {
     pointer-events: none;
-    font-size: 8px;
 }
 
-#map {
-    padding: 0;
-    width: 70%;
-    padding-right: 90px;
+.title {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
 }
 
-.map-wrapper {
-    margin-top: 2rem;
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.state-data {
-    margin-top: 4rem;
+.header-wrapper {
+    border-radius: 12px;
+    background-color: #2c3f4f;
+    overflow: hidden;
+    margin-bottom: 2rem;
     display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-bottom: 50px;
+    flex-direction: column;
+    width: 50%;
 }
-
-a:hover path {
-    stroke: yellow;
-    stroke-width: 2;
-}
-
-.safe_democrat {
-    fill: #244999;
-}
-
-.likely_democrat {
-    fill: #577ccc;
-}
-
-.leans_democrat {
-    fill: #8aafff;
-}
-
-.tilt_democrat {
-    fill: #949bb3;
-}
-
-.safe_republican {
-    fill: #d22532;
-}
-
-.likely_republican {
-    fill: #ff5865;
-}
-
-.leans_republican {
-    fill: #ff8b98;
-}
-
-.tilt_republican {
-    fill: #cf8980;
-}
-
-.tossup {
-    fill: gray
-}
-
-/*  */
-
-.popup-header {
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-.trump {
-    height: 40px;
-    display: flex;
-    gap: 3rem;
-    background-color: #FFD6D9;
-    border-radius: 5px;
-    margin-bottom: 0.5rem;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.trump p {
-  font-size: 16px;
-  font-weight: bold;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-
-.harris {
-    height: 40px;
-    display: flex;
-    gap: 3rem;
-    background-color: #B9DCF8;
-    border-radius: 5px;
-    margin-bottom: 0.5rem;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-
-}
-
-.harris p {
-  font-size: 16px;
-  font-weight: bold;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-/*  */
 
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 10% 1rem 10%;
-}
-
-.header img {
-    border: 2px solid black;
-    display: block;
-    max-width:300px;
-    max-height:225px;
-    width: auto;
+    margin: 1rem 2% 1rem 2%;
     height: auto;
+    flex-wrap: wrap;
 }
 
-.electoral-bar-wrapper {
-    width: 85%; /* Adjust as needed, this makes the middle section 40% of the container width */
+.trump-section, .harris-section {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20px; /* Adds some padding for spacing */
-    box-sizing: border-box;
+    text-align: center;
+    width: 40%;
+    gap: 3rem;
+    color: #e0e0e0;
 }
 
-.candidates {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 20px;
+#trump-vote-totals, #harris-vote-totals {
+    padding-bottom: 2rem;
+    font-size: 400%;
+    font-weight: bold;
 }
 
-.electoral-bar span {
+.trump-header-text, .harris-header-text {
     font-weight: bold;
     font-size: x-large;
 }
 
+#map {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    border-radius: 100%;
+    margin-bottom: 0.8rem;
+}
+
 .electoral-bar {
     width: 100%;
-    height: 3rem; /* Adjust the height of the electoral bar */
+    height: 30px; /* Adjust the height of the electoral bar */
     overflow: hidden;
     position: relative;
+    font-weight: bold;
+    color: #e0e0e0;
 }
 
 .candidate {
@@ -189,64 +95,36 @@ a:hover path {
     justify-content: center;
     position: absolute;
     top: 0;
-    transition: width 0.5s ease;
 }
 
 .trump-electoral {
-    background-image: linear-gradient(to right, #d22532 80%, #e0e0e0 100%);
+    background-color: #d22532;
     left: 0;
 }
 
 .harris-electoral {
-    background-image: linear-gradient(to left, #244999 80%, #e0e0e0 100%);
+    background-color: #244999;
     right: 0;
 }
-
-.header h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
-.header h3 {
-    font-size: 18px;
-    margin: 0;
-}
-
-/* Ensure the spans for electoral votes are visible */
-.electoral-bar span {
-    color: #e0e0e0;
-    z-index: 1;
-}
-
-#harris-vote-totals h1 {
-    float: right;
-}
-
-#harris-vote-totals h4 {
-    float: right;
-}
-
-#trump-vote-totals h1 {
-    float: left;
-}
-
-#trump-vote-totals h4 {
-    float: left;
-}
-
-/*  */
 
 .electoral-bar-split {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 0.33rem;
 }
 
 .candidate-section {
     display: flex;
     height: 30px;
     width: 100%;
+}
+
+#harrisEV {
+    background-color: #244999; /* Blue for Harris */
+}
+
+#trumpEV {
+    background-color: #d22532; /* Red for Trump */
 }
 
 .electoral {
@@ -257,6 +135,59 @@ a:hover path {
     font-size: 14px;
     font-weight: bold;
     height: 100%;
+}
+
+.popup-header {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.trump {
+    height: 40px;
+    display: flex;
+    gap: 3rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.trump p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+
+.harris {
+    height: 40px;
+    display: flex;
+    gap: 3rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.harris p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.state-data {
+    padding-left: 0;
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #e0e0e0;
 }
 
 #harrisEV .safe {
@@ -290,68 +221,76 @@ a:hover path {
     background-color: #d22532;
 }
 
-/*  */
+.safe_democrat {
+    fill: #244999;
+    background-color: #244999;
+}
 
-@media (max-width: 1398px) {
+.likely_democrat {
+    fill: #577ccc;
+    background-color: #577ccc;
+}
+
+.leans_democrat {
+    fill: #8aafff;
+    background-color: #8aafff;
+}
+
+.tilt_democrat {
+    fill: #949bb3;
+    background-color: #949bb3;
+}
+
+.safe_republican {
+    fill: #d22532;
+    background-color: #d22532;
+}
+
+.likely_republican {
+    fill: #ff5865;
+    background-color: #ff5865;
+}
+
+.leans_republican {
+    fill: #ff8b98;
+    background-color: #ff8b98;
+}
+
+.tilt_republican {
+    fill: #cf8980;
+    background-color: #cf8980;
+}
+
+.tossup {
+    fill: gray;
+    background-color: gray;
+}
+
+@media (max-width: 900px) {
+    img {
+        width: 80%;
+    }
 
     #map {
-        padding: 0;
-        width: 115%;
-        padding-right: 8%;
+        width: 120%;
     }
 
-    .map-wrapper {
-        display: flex;
+    .title {
+        font-size: large;
+    }
+
+    .header-wrapper {
+        width: 100%;
+    }
+
+    .trump-section, .harris-section {
         flex-direction: column;
+        gap: 0;
     }
 
-    .state-data {
-        padding-left: 0;
-        margin-top: 2rem;
-        border-left: none;
-        width: 100%;
+    #trump-vote-totals, #harris-vote-totals {
+        padding: 0;
+        margin: 0;
+        font-size: x-large;
     }
-
-    .header {
-        margin: 0 0 2rem 0;
-    }
-
-    .header img {
-        max-width: 240px;
-        max-height: 300px;
-        width: 30%;
-        height: 30%;
-    }
-
-    .harris-vote-totals h4 {
-        float: right;
-    }
-
-    .electoral-bar {
-        width: 100%;
-        height: 1.5rem;
-    }
-
-    .electoral-bar span {
-        font-size: medium;
-    }
-
-    #state-popup {
-        -ms-transform: scale(0.7, 0.7); /* IE 9 */
-        -webkit-transform: scale(0.7, 0.7); /* Safari */
-        transform: scale(0.7, 0.7);
-    }
-
-    h1 {
-        font-size: 1rem;
-    }
-    
-    h2 {
-        font-size: 0.8rem;
-    }
-    
-    h4 {
-        font-size: 0.8rem;
-    }
-
 }

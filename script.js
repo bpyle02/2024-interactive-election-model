@@ -53,8 +53,9 @@ function colorStates(data) {
     popup.style.position = 'absolute';
     popup.style.width = '18rem';
     popup.style.padding = '10px';
-    popup.style.backgroundColor = 'white';
-    popup.style.boxShadow = '5px 5px 5px rgb(0 0 0 / 20%)'
+    popup.style.backgroundColor = '#2c3f4f';
+    popup.style.color = '#e0e0e0';
+    popup.style.boxShadow = '5px 5px 5px rgb(255 255 255 / 20%)'
     popup.style.borderRadius = '7.5px';
     popup.style.display = 'none'; // Initially hidden
     popup.style.pointerEvents = 'none'; // Make sure it doesn't interfere with mouse events
@@ -129,18 +130,22 @@ function colorStates(data) {
 
             if (trumpTilt > 0) {
                 document.getElementById('trumpTilt').textContent = trumpTilt;
+                document.getElementById('harrisTilt').style.zIndex = 50;
             }
 
             if (trumpLean > 0) {
                 document.getElementById('trumpLean').textContent = trumpLean;
+                document.getElementById('harrisLean').style.zIndex = 50;
             }
 
             if (trumpLikely > 0) {
                 document.getElementById('trumpLikely').textContent = trumpLikely;
+                document.getElementById('trumpLikely').style.zIndex = 50;
             }
 
             if (trumpSafe > 0) {
                 document.getElementById('trumpSafe').textContent = trumpSafe;
+                document.getElementById('trumpSafe').style.zIndex = 50;
             }
 
             document.getElementById('harrisBar').style.width = (harrisElectoralVotes / totalElectoralVotes) * 100 + '%';
@@ -153,48 +158,69 @@ function colorStates(data) {
 
             if (harrisTilt > 0) {
                 document.getElementById('harrisTilt').textContent = harrisTilt;
+                document.getElementById('harrisTilt').style.zIndex = 60;
             }
 
             if (harrisLean > 0) {
                 document.getElementById('harrisLean').textContent = harrisLean;
+                document.getElementById('harrisLean').style.zIndex = 50;
             }
 
             if (harrisLikely > 0) {
                 document.getElementById('harrisLikely').textContent = harrisLikely;
+                document.getElementById('harrisLikely').style.zIndex = 50;
             }
 
             if (harrisSafe > 0) {
                 document.getElementById('harrisSafe').textContent = harrisSafe;
+                document.getElementById('harrisSafe').style.zIndex = 50;
             }
 
             document.getElementById('trumpElectoralVotes').textContent = trumpElectoralVotes + " ";
             document.getElementById('harrisElectoralVotes').textContent = harrisElectoralVotes + " ";
 
             document.getElementById("trump-vote-totals").innerHTML = `
-                <h1>Trump</h1><br />
-                <h4 id="harrisTotalVotes">${Math.round(trumpTotalVotes/100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}&nbsp;</h4>
-                <h4>(${(trumpTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%)"}</h4>
+                <span class="trump-odds">${(trumpTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(0) + "%"}</span>
             `
-            document.getElementById("harris-vote-totals").innerHTML = `
-                <h1>Harris</h1><br />
-                <h4 id="harrisTotalVotes">&nbsp;${Math.round(harrisTotalVotes/100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                <h4>(${(harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(2) + "%) "}</h4>
-            `
+
+            if (window.innerWidth < 900) {
+                document.getElementById("harris-section").innerHTML = `
+                    <div>
+                        <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/harris-square.png" />
+                        <span class="harris-header-text">Harris</span>
+                    </div>
+                    <div id="harris-vote-totals">
+                        <span clss="harris-odds">${(harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(0) + "%"}</span>
+                    </div>
+                `
+            }
+            else {
+                document.getElementById("harris-section").innerHTML = `
+                    <div id="harris-vote-totals">
+                        <span="harris-odds">${(harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(0) + "%"}</span>
+                    </div>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/harris-square.png" />
+                        <span class="harris-header-text">Harris</span>
+                    </div>
+                `
+            }
 
             // Add hover event to show popup
             stateLink.addEventListener('mouseenter', (event) => {
+
+                console.log(info.r_percent);
+
                 const popupHTML = `
                     <div class='popup-wrapper'>
                         <div class='popup-header'>
                             <h2>${state} - ${info.electoral_votes} EV</h2>
                         </div>
-                        <div class='trump' style='width:${info.r_percent}%;'>
-                            <p>${(info.r_percent).toFixed(2)}%</p>
-                            <p>Trump</p>
+                        <div class='trump ${calculateStateRating(info.final_margin, info.electoral_votes)}republican' style='width:${info.r_percent}%;'>
+                            <p style='white-space: nowrap'>Trump ${(info.r_percent).toFixed(2)}%</p>
                         </div>
-                        <div class='harris' style='width:${info.d_percent}%;'>
-                            <p>${(info.d_percent).toFixed(2)}%</p>
-                            <p>Harris</p>
+                        <div class='harris ${calculateStateRating(info.final_margin, info.electoral_votes)}democrat' style='width:${info.d_percent}%;'>
+                            <p style='white-space: nowrap'>Harris ${(info.d_percent).toFixed(2)}%</p>
                         </div>
                     </div>
                 `;
@@ -325,7 +351,6 @@ function csvToObject(csv) {
             }
 
             if (value.includes(".")) {
-                console.log(tempValue)
                 tempValue = parseFloat(tempValue.replace(".", "")) / 100
                 isNumber = true
             }
@@ -339,3 +364,28 @@ function csvToObject(csv) {
 
     return result;
 }
+
+addEventListener("resize", () => {
+    if (window.innerWidth < 900) {
+        document.getElementById("harris-section").innerHTML = `
+            <div>
+                <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/harris-square.png" />
+                <span class="harris-header-text">Harris</span>
+            </div>
+            <div id="harris-vote-totals">
+                <span class="harris-odds">${(harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(0) + "%"}</span>
+            </div>
+        `
+    }
+    else {
+        document.getElementById("harris-section").innerHTML = `
+            <div id="harris-vote-totals">
+                <span class="harris-odds">${(harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(0) + "%"}</span>
+            </div>
+            <div>
+                <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/harris-square.png" />
+                <span class="harris-header-text">Harris</span>
+            </div>
+        `
+    }
+})
