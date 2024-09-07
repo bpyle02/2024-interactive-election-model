@@ -193,6 +193,16 @@ img {
     color: #e0e0e0;
 }
 
+#chart-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+}
+
 #state-data-inner {
     margin: 2rem 0 2rem 0;
 }
@@ -306,6 +316,10 @@ img {
     }
 
     #state-data-inner {
+        margin: 0;
+    }
+
+    #chart-container {
         margin: 0;
     }
 }
