@@ -458,7 +458,7 @@ function chartIt(data) {
                     y: {
                         title: {
                             display: true,
-                            text: 'Percent of Popular Vote'
+                            text: '% Popular Vote'
                         },
                         grid: {
                             color: '#a0a0a0' // Change y-axis gridline color
