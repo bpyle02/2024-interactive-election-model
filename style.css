@@ -74,10 +74,6 @@ text {
     width: 80%;
 }
 
-/* #chart-container {
-    width: 80%;
-} */
-
 img {
     width: 100%;
     border-radius: 100%;
@@ -303,5 +299,13 @@ img {
         padding: 0;
         margin: 0;
         font-size: x-large;
+    }
+
+    .state-data {
+        margin: 0;
+    }
+
+    #state-data-inner {
+        margin: 0;
     }
 }
