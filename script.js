@@ -17,17 +17,33 @@ let harrisSafe = 0
 const sheetName = encodeURIComponent("Sheet1")
 const sheetId = '17tVILGOy5Nk0l4MvxnC1r7vSzAnnBlvSfXQylnVORes'; // Replace with your spreadsheet ID
 const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`; // Replace with your sheet name
+const sheetName2 = encodeURIComponent("Sheet2")
+const sheetURL2 = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName2}`; // Replace with your sheet name
 
 model_data = {}
+timeline_data = {}
+
+fetch(sheetURL2)
+    .then(response => response.text())
+    .then(data => handleTimelineResponse(data))
+    .catch(error => console.error('Error:', error));
+
+function handleTimelineResponse(data) {
+    timeline_data = csvToObject(data);
+    console.log("WHAT")
+    console.log(timeline_data)
+    chartIt(getChartData(timeline_data['National']))
+}
 
 fetch(sheetURL)
-    .then(response => response.text())
-    .then(data => handleResponse(data))
-    .catch(error => console.error('Error:', error));
+.then(response => response.text())
+.then(data => handleResponse(data))
+.catch(error => console.error('Error:', error));
+
 
 function handleResponse(data) {
     let sheetObjects = csvToObject(data);
-
+    
     for (i in sheetObjects) {
         // console.log(sheetObjects[i])
         model_data[sheetObjects[i]['"State"']] = {
@@ -38,10 +54,10 @@ function handleResponse(data) {
             "d_percent": parseFloat(sheetObjects[i]['"D %"']),
             "3rd_percent": parseFloat(sheetObjects[i]['"3rd Party %"'])
         }
-
+        
         // console.log(model_data[i])
     }
-
+    
     colorStates(model_data)
 }
 
@@ -60,21 +76,22 @@ function colorStates(data) {
     popup.style.display = 'none'; // Initially hidden
     popup.style.pointerEvents = 'none'; // Make sure it doesn't interfere with mouse events
     document.body.appendChild(popup);
+    
 
     // Loop through each state in the data
     for (const [state, info] of Object.entries(data)) {
         const statePath = document.getElementById(info.state_abbreviation + "_Path");
         const statePathRect = document.getElementById(info.state_abbreviation + "_Path_Rect");
         const stateLink = document.getElementById(info.state_abbreviation + "_Link");
-
+        
         margin = info.r_percent - info.d_percent;
         harrisTotalVotes += info.expected_turnout * info.d_percent
         trumpTotalVotes += info.expected_turnout * info.r_percent
-
+        
         // Apply color based on winner
         if (margin < 0) {
             statePath.classList.add(calculateStateRating(margin, info.electoral_votes) + 'democrat');
-
+            
             if (statePathRect) {
                 statePathRect.classList.add(calculateStateRating(margin, 0) + 'democrat');
             }
@@ -98,7 +115,13 @@ function colorStates(data) {
 
         requestAnimationFrame(() => {
 
+            headerArea = document.getElementById('header-wrapper');
+            headerArea.addEventListener("click", () => {
+                chartIt(getChartData(timeline_data['National']));
+            });
+
             stateLink.addEventListener("click", () => {
+                chartIt(getChartData(timeline_data[state]));
                 getStateData(state, info.electoral_votes, info.expected_turnout, info.r_percent, info.d_percent);
             });
 
@@ -110,14 +133,6 @@ function colorStates(data) {
             trumpLikelyPct = trumpLikely / trumpElectoralVotes * 100
             trumpLeanPct = trumpLean / trumpElectoralVotes * 100
             trumpTiltPct = trumpTilt / trumpElectoralVotes * 100
-
-            // console.log("EV: " + harrisSafe + ", " + trumpSafe)
-
-            // console.log("Trump: " + trumpTilt + ", " + trumpLean + ", " + trumpLikely + ", " + trumpSafe);
-            // console.log("Trump: " + (trumpTiltPct + trumpLeanPct + trumpLikelyPct + trumpSafePct));
-
-            // console.log("Harris: " + harrisTilt + ", " + harrisLean + ", " + harrisLikely + ", " + harrisSafe);
-            // console.log("Harris: " + (harrisTiltPct + harrisLeanPct + harrisLikelyPct + harrisSafePct));
 
             // Update bar widths and text
             document.getElementById('trumpBar').style.width = (trumpElectoralVotes / totalElectoralVotes) * 100 + '%';
@@ -363,6 +378,112 @@ function csvToObject(csv) {
     }
 
     return result;
+}
+
+function isCanvasBlank(canvas) {
+    return !canvas.getContext('2d')
+        .getImageData(0, 0, canvas.width, canvas.height).data
+        .some(channel => channel !== 0);
+}
+
+function getChartData(data) {
+    normalized_data = []
+
+    for (const [key, value] of Object.entries(data)) {
+        if (value != '' && key != '"Averages"') {
+            normalized_data.push({x: key.replace(/"/g, ''), y: value})
+        }
+    }
+
+    return normalized_data;
+}
+
+function chartIt(data) {
+    console.log(data)
+
+    trump_averages = []
+    harris_averages = []
+    dates = []
+
+    for (const [key, value] of Object.entries(data)) {
+        trump_averages.push({x: value.x, y: (50 + (value.y / 2))});
+        harris_averages.push({x: value.x, y: (50 - (value.y / 2))});
+        console.log(value.x)
+        dates.push(value.x)
+    }
+
+    let myChart = document.getElementById('election-timeline-data');
+    const ctx = myChart.getContext('2d');
+
+    if (myChart.chart_instance) {
+        if (!isCanvasBlank(myChart)) {
+            myChart.chart_instance.data.datasets[0].data = trump_averages;
+            myChart.chart_instance.data.datasets[1].data = harris_averages;
+            myChart.chart_instance.update();
+        }
+    } else {
+        myChart.chart_instance = new Chart(ctx, {
+            type: 'line',
+            data: {
+            labels: dates,
+            datasets: [{
+                    label: 'Trump',
+                    data: trump_averages,
+                    fill: false,
+                    borderColor: '#981f1f',
+                    tension: 0.1
+                },
+                {
+                    label: 'Harris',
+                    data: harris_averages,
+                    fill: false,
+                    borderColor: '#1f4aa8',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        },
+                        grid: {
+                            color: '#a0a0a0' // Change x-axis gridline color
+                        },
+                        ticks: {
+                            color: '#e0e0e0', // X-axis label color
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Percent of Popular Vote'
+                        },
+                        grid: {
+                            color: '#a0a0a0' // Change y-axis gridline color
+                        },
+                        ticks: {
+                            color: '#e0e0e0' // Y-axis label color
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#e0e0e0' // Change the color of legend text
+                        }
+                    },
+                    tooltip: {
+                        bodyColor: '#e0e0e0', // Change the color of tooltip text
+                        titleColor: '#e0e0e0' // Change the color of tooltip title
+                    }
+                }
+            }
+        });
+    }
+
+    
 }
 
 addEventListener("resize", () => {

@@ -36,7 +36,8 @@ text {
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
+    cursor: pointer;
 }
 
 .header {
@@ -70,8 +71,12 @@ text {
 }
 
 #map {
-    width: 100%;
+    width: 80%;
 }
+
+/* #chart-container {
+    width: 80%;
+} */
 
 img {
     width: 100%;
@@ -182,12 +187,18 @@ img {
 
 .state-data {
     padding-left: 0;
-    margin-top: 2rem;
+    margin: 2rem 0 2rem 0;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     color: #e0e0e0;
+}
+
+#state-data-inner {
+    margin: 2rem 0 2rem 0;
 }
 
 #harrisEV .safe {
