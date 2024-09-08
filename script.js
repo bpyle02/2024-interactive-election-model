@@ -113,12 +113,16 @@ function colorStates(data) {
 
         requestAnimationFrame(() => {
 
+            chartHeaderText = document.getElementById('graph-title');
+
             headerArea = document.getElementById('header-wrapper');
             headerArea.addEventListener("click", () => {
+                chartHeaderText.textContent = 'National Advanced Polling Average Graph'
                 chartIt(getChartData(timeline_data['National']));
             });
 
             stateLink.addEventListener("click", () => {
+                chartHeaderText.textContent = state + ' Advanced Polling Average Graph'
                 chartIt(getChartData(timeline_data[state]));
                 getStateData(state, info.electoral_votes, info.expected_turnout, info.r_percent, info.d_percent);
             });
@@ -198,7 +202,7 @@ function colorStates(data) {
 
             if (window.innerWidth < 900) {
                 document.getElementById("harris-section").innerHTML = `
-                    <div>
+                    <div class='harris-profile'>
                         <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/harris-square.png" />
                         <span class="harris-header-text">Harris</span>
                     </div>
@@ -212,7 +216,7 @@ function colorStates(data) {
                     <div id="harris-vote-totals">
                         <span="harris-odds">${(harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(0) + "%"}</span>
                     </div>
-                    <div>
+                    <div class='harris-profile'>
                         <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/harris-square.png" />
                         <span class="harris-header-text">Harris</span>
                     </div>
@@ -487,7 +491,7 @@ function chartIt(data) {
 addEventListener("resize", () => {
     if (window.innerWidth < 900) {
         document.getElementById("harris-section").innerHTML = `
-            <div>
+            <div class='harris-profile'>
                 <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/harris-square.png" />
                 <span class="harris-header-text">Harris</span>
             </div>
@@ -501,7 +505,7 @@ addEventListener("resize", () => {
             <div id="harris-vote-totals">
                 <span class="harris-odds">${(harrisTotalVotes / (trumpTotalVotes + harrisTotalVotes) * 100).toFixed(0) + "%"}</span>
             </div>
-            <div>
+            <div class='harris-profile'>
                 <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/harris-square.png" />
                 <span class="harris-header-text">Harris</span>
             </div>

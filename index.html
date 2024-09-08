@@ -8,8 +8,7 @@
         content="Dive into the 2024 presidential election with our interactive map. Analyze state-by-state data, predict outcomes, and explore historical trends. Your election insights start here.">
     <meta name="keywords"
         content="2024 presidential election, interactive map, election predictions, state-by-state data, historical election trends, electoral college, political analysis, voter demographics, election outcomes">
-    <title>Brandon's Interactive Election Model</title>
-    <!-- <link rel="stylesheet" href="destyle.css"> -->
+    <title>2024 Presidential Election Polling Averages</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,13 +17,25 @@
 </head>
 
 <body>
+
+    <nav>
+        <h3 class="nav-title">Brandon Pyle's 2024 Election Model</h3>
+        <div>
+            <a href="/">
+                <h3 class="nav-menu">Home</h3>
+            </a>
+            <a href="/methodology.html">
+                <h3 class="nav-menu">Methodology</h3>
+            </a>
+        </div>
+    </nav>
     
     <div class="container">
         <div class="header-wrapper" id="header-wrapper">
             <div class="header">
-                <span class="title">Brandon's 2024 Election Forecast</span>
+                <span class="title">Brandon Pyle's National Advanced Polling Average</span>
                 <div class="trump-section">
-                    <div>
+                    <div class="trump-profile">
                         <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/trump-square.png" />
                         <span class="trump-header-text">Trump</span>
                     </div>
@@ -34,7 +45,7 @@
 
                 <div class="harris-section" id="harris-section">
                     <div id="harris-vote-totals"></div>
-                    <div>
+                    <div class="harris-profile">
                         <img src="https://raw.githubusercontent.com/bpyle02/2024-interactive-election-model/main/images/harris-square.png" />
                         <span class="harris-header-text">Harris</span>
                     </div>
@@ -1043,6 +1054,7 @@
         <!-- <div class="state-data">
             <div id="state-data-inner"></div>
         </div> -->
+        <h1 id="graph-title">National Advanced Polling Average Graph</h1>
         <div id="chart-container">
             <canvas id='election-timeline-data'></canvas>
         </div>

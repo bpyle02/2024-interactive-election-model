@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Dive into the 2024 presidential election with our interactive map. Analyze state-by-state data, predict outcomes, and explore historical trends. Your election insights start here.">
+    <meta name="keywords"
+        content="2024 presidential election, interactive map, election predictions, state-by-state data, historical election trends, electoral college, political analysis, voter demographics, election outcomes">
+    <title>2024 Presidential Election Polling Averages</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <h3 class="nav-title">Brandon Pyle's 2024 Election Model</h3>
+        <div>
+            <a href="/">
+                <h3 class="nav-menu">Home</h3>
+            </a>
+            <a href="/methodology.html">
+                <h3 class="nav-menu">Methodology</h3>
+            </a>
+        </div>
+    </nav>
+    
+    <div class="methodology-container">
+        <h1>Methodology</h1>
+        <div class="methodology-body">
+            <p>There are 5 main variables that make up my advanced polling average model:</p>
+            <ol>
+                <li>Historic Trend</li>
+                <li>Historic Polling Error</li>
+                <li>Candidate Favorability</li>
+                <li>Betting Odds</li>
+                <li>Current Polling Averages</li>
+                <li>Third Party Trend</li>
+            </ol>
+            <p>Note: this model does not use any national polling data. It is exclusively state-by-state.<br /><br />Let's go through each data point and see how it affects the model.</p>
+            <h3>Historic Trend</h3>
+            <p>To get the historic trend, I take the difference between the 2020 election state margins and the 2004 state margins and divide it by 5 to get the average trend on a per-election basis.</p>
+            <h3>Historic Polling Error</h3>
+            <p>To get the historic polling error, I take each state's 2016 and 2020 actual margin minus its polling average and get the average.</p>
+            <h3>Candidate Favorability</h3>
+            <p>To get each candidates favorability, I use civiqs, because, as far as I know, they are the only ones polling candidate favorability in every state.</p>
+            <h3>Betting Odds</h3>
+            <p>To get betting odds, I use polymarket, because it is the only site with state-level odds.</p>
+            <h3>Current Polling Averages</h3>
+            <p>To get current polling averages, I take the average of RealClearPolling and 270 to Win for each state. If the state does not have any polling data, I take the average of the 2016 and 2020 actual margins as well as polling averages.</p>
+            <h3>Third Party Trend</h3>
+            <p>Although RFK Jr. has dropped out of the race, he has had and will have a noticable effect on this race. In order to account for this, I took the 2020 third party vote share as a percent and subtracted it with the same data from 2016 to get the trend. I then added 10% to this number to account for RFK JR's impact.</p>
+            <h2>Putting it all together</h2>
+            <p>Here is the formula I use to calculate the expected margin for each state:</p>
+            <p>((((Polling Average * Historic Trend) + ((Betting Odds * (1 - Historic Trend)) * Absolute Value of Historic Polling Error) * 5) + ((Trump Favorability + Kamala Favorability + 15%) / 2)) / 6) + Polling Error + (Third Party Percent * 41%) - (Third Party Percent * 27%)</p>
+        </div>
+    </div>
+</body>
+
+</html>

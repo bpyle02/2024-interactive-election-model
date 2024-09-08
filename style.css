@@ -8,11 +8,46 @@ body {
     margin: 2rem;
     font-family: "Lato", Helvetica, sans-serif;
     background-color: #1d2b39;
+    color: #e0e0e0;
 }
 
 text {
     pointer-events: none;
 }
+
+a {
+    color: #e0e0e0;
+    background-color: #1d2b39;
+    text-decoration: none;
+}
+
+a h3 {
+    padding: 0.8rem;
+    border-radius: 5px;
+}
+
+.nav-menu:hover {
+    cursor: pointer;
+    background-color: #2c3f4f;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -1.5rem;
+}
+
+.nav-title {
+    margin-left: 1.2rem;
+}
+
+nav div {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
 
 .title {
     font-size: xx-large;
@@ -36,7 +71,7 @@ text {
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 45%;
     cursor: pointer;
 }
 
@@ -59,6 +94,14 @@ text {
     color: #e0e0e0;
 }
 
+.trump-profile, .harris-profile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
 #trump-vote-totals, #harris-vote-totals {
     padding-bottom: 2rem;
     font-size: 400%;
@@ -75,7 +118,8 @@ text {
 }
 
 img {
-    width: 100%;
+    width: 60%;
+    height: auto;
     border-radius: 100%;
     margin-bottom: 0.8rem;
 }
@@ -193,6 +237,11 @@ img {
     color: #e0e0e0;
 }
 
+#graph-title {
+    text-align: center;
+    margin: 2rem 0 2rem 0;
+}
+
 #chart-container {
     margin-left: 20%;
     margin-right: 20%;
@@ -283,6 +332,14 @@ img {
     background-color: gray;
 }
 
+.methodology-container {
+    margin: 0 30% 0 30%;
+}
+
+.methodology-container h1 {
+    text-align: center;
+}
+
 @media (max-width: 900px) {
     img {
         width: 80%;
@@ -321,5 +378,21 @@ img {
 
     #chart-container {
         margin: 0;
+    }
+
+    .methodology-container {
+        margin: 0;
+    }
+
+    a h3 {
+        padding: 0.5rem;
+    }
+    
+    nav {
+        margin-top: -1.5rem;
+    }
+    
+    .nav-title {
+        margin-left: 0rem;
     }
 }
