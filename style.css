@@ -71,7 +71,7 @@ text {
 }
 
 #map {
-    width: 80%;
+    width: 60%;
 }
 
 img {
@@ -194,8 +194,8 @@ img {
 }
 
 #chart-container {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
     display: flex;
     align-items: center;
     justify-content: center;

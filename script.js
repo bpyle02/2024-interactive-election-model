@@ -30,8 +30,6 @@ fetch(sheetURL2)
 
 function handleTimelineResponse(data) {
     timeline_data = csvToObject(data);
-    console.log("WHAT")
-    console.log(timeline_data)
     chartIt(getChartData(timeline_data['National']))
 }
 
