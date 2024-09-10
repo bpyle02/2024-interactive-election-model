@@ -14,10 +14,10 @@ let harrisLean = 0
 let harrisLikely = 0
 let harrisSafe = 0
 
-const sheetName = encodeURIComponent("Sheet1")
 const sheetId = '17tVILGOy5Nk0l4MvxnC1r7vSzAnnBlvSfXQylnVORes'; // Replace with your spreadsheet ID
+const sheetName = encodeURIComponent("2024 Model")
 const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`; // Replace with your sheet name
-const sheetName2 = encodeURIComponent("Sheet2")
+const sheetName2 = encodeURIComponent("Margin by Date")
 const sheetURL2 = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName2}`; // Replace with your sheet name
 
 model_data = {}
@@ -30,6 +30,7 @@ fetch(sheetURL2)
 
 function handleTimelineResponse(data) {
     timeline_data = csvToObject(data);
+    console.log(timeline_data)
     chartIt(getChartData(timeline_data['National']))
 }
 
@@ -274,6 +275,7 @@ function updatePopupPosition(event, popup) {
 
 // Function to calculate state rating based on margin
 function calculateStateRating(margin, electoral_votes) {
+    console.log(margin)
     winner = "trump"
     
     if (margin < 0) {
@@ -284,7 +286,7 @@ function calculateStateRating(margin, electoral_votes) {
         margin *= -1
     }
 
-    if (margin < 15 && margin >= 5) {
+    if (margin < 15 && margin >= 10) {
 
         if (winner == "trump") {
             trumpLikely += electoral_votes
@@ -293,7 +295,7 @@ function calculateStateRating(margin, electoral_votes) {
         }
 
         return "likely_";
-    } else if (margin < 5 && margin >= 1) {
+    } else if (margin < 10 && margin >=3) {
 
         if (winner == "trump") {
             trumpLean += electoral_votes
@@ -302,7 +304,7 @@ function calculateStateRating(margin, electoral_votes) {
         }
 
         return "leans_";
-    } else if (margin < 1) {
+    } else if (margin < 3) {
 
         if (winner == "trump") {
             trumpTilt += electoral_votes
@@ -396,6 +398,7 @@ function getChartData(data) {
             normalized_data.push({x: key.replace(/"/g, ''), y: value})
         }
     }
+
 
     return normalized_data;
 }
